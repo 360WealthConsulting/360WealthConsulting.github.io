@@ -276,6 +276,7 @@ body {
 }
 
 .teaser strong { color: var(--ink); font-weight: 650; }
+h1.teaser { font-weight: 400; line-height: 1.55; }   /* the 404 page's heading reads as the teaser */
 
 .points {
   list-style: none;
@@ -332,6 +333,29 @@ body {
 }
 
 .point p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+/* --- 404: one clear way home ------------------------------------------------------------------------- */
+.home-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: clamp(22px, 4vh, 36px) auto 0;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(96, 165, 250, 0.55);
+  background: linear-gradient(140deg, rgba(37, 99, 235, 0.45), rgba(34, 211, 238, 0.18));
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration: none;
+  box-shadow: 0 0 28px rgba(59, 130, 246, 0.35);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.home-link:hover { box-shadow: 0 0 42px rgba(59, 130, 246, 0.6); transform: translateY(-1px); }
+.home-link:focus-visible { outline: 3px solid var(--electric-ice); outline-offset: 3px; }
+.home-link svg { width: 18px; height: 18px; }
 
 .foot {
   margin-top: auto;
