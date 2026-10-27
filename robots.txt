@@ -1,3 +1,4 @@
-# Preview build: not for indexing.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://360plus.ai/sitemap.xml
