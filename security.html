@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Security | 360plus.ai</title>
+  <meta name="description" content="How 360 protects client information in the 360Plus / Client360 platform, and how to report a security concern.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://360plus.ai/security">
+  <meta name="theme-color" content="#050A18">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/coming-soon.css?v=5">
+  <link rel="stylesheet" href="/assets/css/legal.css?v=1">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+
+  <main class="page page--legal">
+    <header class="legal-head">
+      <a class="legal-home" href="/" aria-label="360plus.ai home">
+        <span class="wordmark wordmark--small">360<span class="plus">plus</span><span class="tld">.ai</span></span>
+      </a>
+      <p class="eyebrow">Trust</p>
+      <h1 class="legal-title">Security</h1>
+      <p class="legal-meta">Last updated <span class="decide">[DECISION: date]</span></p>
+    </header>
+
+    <p class="draft-banner"><strong>DRAFT FOR MICHAEL&rsquo;S AND COUNSEL&rsquo;S REVIEW.</strong>
+      Not published. Every statement here must stay true; highlighted items are claims we can make only after the
+      named control is in place.</p>
+
+    <article class="legal-doc">
+      <p class="legal-lead">Your tax returns, financial records and business books are among the most sensitive information you
+        have. This page describes, in plain terms, how we protect them in the 360Plus platform and our Client360 system. Our
+        <a href="/privacy">Privacy Policy</a> explains what we collect and why.</p>
+
+      <h2 id="access">Who can see your information</h2>
+      <ul>
+        <li><strong>Only assigned staff.</strong> Each staff member has a role that defines what they can do, and most staff can
+          see only the clients they are assigned to. Staff cannot give themselves more access.</li>
+        <li><strong>Sensitive numbers are masked.</strong> Full Social Security numbers are never displayed in Client360; staff see
+          at most the last four digits. Account numbers in portal summaries are shown by their last four digits.</li>
+        <li><strong>Every access leaves a trail.</strong> Changes, document views and sign-ins are recorded in an audit log that
+          cannot be edited or deleted, and that is chained so tampering would be detected.</li>
+      </ul>
+
+      <h2 id="signin">How sign-in works</h2>
+      <ul>
+        <li><strong>Staff</strong> sign in with firm-managed Microsoft accounts
+          <span class="decide">[DECISION: &ldquo;with multi-factor authentication&rdquo; &mdash; only after confirming OIDC_REQUIRE_MFA=true in production]</span>.
+          Staff sessions expire after 8 hours.</li>
+        <li><strong>Clients</strong> are invited individually. You sign in with a one-time code sent to your e-mail address, which
+          expires after 10 minutes, or with a passkey registered in person at our office. We store sign-in codes only in a hashed
+          form, limit how many can be requested, and do not reveal whether an e-mail address has an account.</li>
+        <li><strong>No passwords to steal.</strong> Client360 does not store client passwords at all.</li>
+      </ul>
+
+      <h2 id="encryption">Encryption</h2>
+      <ul>
+        <li><strong>In transit:</strong> all connections to our website, Client360 and the portal use HTTPS.</li>
+        <li><strong>Credentials:</strong> access tokens for QuickBooks, Microsoft and other connected services are encrypted before
+          they are stored, and are never sent to a browser or written to logs.</li>
+        <li><strong>At rest:</strong> <span class="decide">[DECISION: state disk/database encryption only after BitLocker (or equivalent) is confirmed on the server&rsquo;s data and vault drives]</span></li>
+      </ul>
+
+      <h2 id="connections">Connected services</h2>
+      <ul>
+        <li><strong>QuickBooks Online is read-only.</strong> We cannot change your books or move money, and we never store bank
+          account numbers or tax IDs from QuickBooks. <a href="/quickbooks">More about the QuickBooks connection</a>.</li>
+        <li><strong>Least access.</strong> We request only the permissions each connection needs, and you can disconnect at any time.</li>
+        <li><strong>No data for advertising or AI training.</strong> We never sell client data, and we do not use it to train AI models.</li>
+      </ul>
+
+      <h2 id="app">Application protections</h2>
+      <ul>
+        <li>Protection against cross-site request forgery, clickjacking and content injection through strict browser security headers.</li>
+        <li>Uploads limited by type and size (50&nbsp;MB), checked against their real content, stored under random names, and held for
+          staff review before acceptance
+          <span class="decide">[DECISION: add &ldquo;and scanned for malware&rdquo; only after scanning is built]</span>.</li>
+        <li>Errors are sanitized so that tokens and secrets are never shown or logged.</li>
+      </ul>
+
+      <h2 id="operations">Operations</h2>
+      <ul>
+        <li><strong>Backups:</strong> <span class="decide">[DECISION: describe only after daily backups are scheduled, encrypted and copied off the server, and the document vault is included]</span></li>
+        <li><strong>Restore testing:</strong> <span class="decide">[DECISION: &ldquo;we test restores regularly&rdquo; &mdash; only once the weekly restore drill task is installed]</span></li>
+        <li><strong>Written security program:</strong> <span class="decide">[DECISION: reference the firm&rsquo;s WISP once adopted (FTC Safeguards Rule, IRS Publication 4557)]</span></li>
+        <li><strong>Incident response:</strong> if we discover a security incident affecting your information, we will contain it,
+          investigate, and notify you and the authorities as the law requires.</li>
+      </ul>
+
+      <h2 id="you">What you can do</h2>
+      <ul>
+        <li>Protect your e-mail account with a strong password and multi-factor authentication; it receives your sign-in codes.</li>
+        <li>Never share a sign-in code. 360 staff will never ask you for one, or for your full Social Security number, by e-mail,
+          text or phone.</li>
+        <li>Be wary of e-mails asking you to &ldquo;re-verify&rdquo; or open unexpected attachments. When in doubt, call us at a number
+          you already know.</li>
+        <li>Sign out on shared devices, and tell us right away if a device with a passkey is lost.</li>
+      </ul>
+
+      <h2 id="report">Report a security concern</h2>
+      <p>If you think your account or information has been misused, or you have found a vulnerability in our systems, contact us
+        at <span class="decide">[DECISION: security contact e-mail]</span> or <span class="decide">[DECISION: phone]</span>. Please
+        give us a reasonable chance to fix a vulnerability before disclosing it, and do not access, change or keep data that is not
+        yours. We will not pursue good-faith research that follows these guidelines
+        <span class="decide">[COUNSEL: confirm safe-harbor wording]</span>.</p>
+    </article>
+
+    <footer class="foot">
+      <p class="foot-links"><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/security">Security</a> &middot; <a href="/quickbooks">QuickBooks</a></p>
+      <p>&copy; 2026 360 Wealth Consulting &middot; 360plus.ai</p>
+    </footer>
+  </main>
+</body>
+</html>

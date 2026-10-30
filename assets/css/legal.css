@@ -74,7 +74,8 @@
 
 .legal-doc h3 { margin: 1.5em 0 0.4em; font-size: 1.04rem; font-weight: 700; color: var(--ink); }
 .legal-doc p { margin: 0 0 0.9em; }
-.legal-doc ul { margin: 0 0 1em; padding-left: 1.3em; }
+.legal-doc ul,
+.legal-doc ol { margin: 0 0 1em; padding-left: 1.3em; }
 .legal-doc li { margin: 0.3em 0; }
 .legal-doc strong { color: var(--ink); }
 
@@ -126,7 +127,9 @@
 
 @media (max-width: 640px) {
   .legal-toc ol { columns: 1; }
-  .legal-table { font-size: 0.88rem; }
-  .legal-table th,
-  .legal-table td { padding: 8px 6px; }
+  /* Tables become stacked rows: the first cell reads as the row's heading. */
+  .legal-table thead { display: none; }
+  .legal-table tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--card-line); }
+  .legal-table td { display: block; padding: 2px 0; border: 0; }
+  .legal-table td:first-child { color: var(--ink); font-weight: 650; }
 }
