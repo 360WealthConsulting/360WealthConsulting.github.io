@@ -288,8 +288,8 @@
         <li><strong>Encrypted credentials:</strong> access tokens for QuickBooks, Microsoft and other connected services are
           encrypted before storage and never shown in a browser.</li>
         <li><strong>Staff sign-in</strong> through the firm&rsquo;s Microsoft accounts, with multi-factor authentication
-          <span class="decide">[DECISION: confirm OIDC_REQUIRE_MFA is on in production before saying this]</span>. Staff
-          sessions end after 8 hours.</li>
+          <span class="decide">[DECISION: say this only after OIDC_REQUIRE_MFA=true in production &mdash; it is false today (checked 2026-10-31)]</span>. Staff
+          sessions end after 30 minutes of inactivity and after 8 hours at most <span class="decide">[DECISION: only once Client360 PR #642 is deployed]</span>.</li>
         <li><strong>Client sign-in</strong> by invitation only, using a one-time code sent to your e-mail address or a passkey
           registered in person with our staff. Sign-in codes expire after 10 minutes and are limited in number.</li>
         <li><strong>Least-privilege access:</strong> staff access is controlled by role and limited to the clients each person
@@ -300,11 +300,11 @@
           and is protected against tampering.</li>
         <li><strong>Upload controls:</strong> uploads are limited by file type and size, checked to confirm they are the type
           they claim to be, and held for staff review before they are accepted.</li>
-        <li><strong>Backups</strong> of our database <span class="decide">[DECISION: describe only once the scheduled, off-site, encrypted backup is in place &mdash; today backups are on the same server, unencrypted, and documents are not yet backed up]</span>.</li>
+        <li><strong>Backups</strong> of our database <span class="decide">[DECISION: describe only once the scheduled, off-site, encrypted backup is in place &mdash; today a nightly database backup is copied off-site, but it is not encrypted and documents are not yet backed up]</span>.</li>
       </ul>
       <p>No system is perfectly secure, and we cannot guarantee absolute security. You can help by keeping your e-mail account
         secure, since it receives your sign-in codes, and by contacting us immediately if you notice anything unusual.
-        <span class="decide">[COUNSEL: align with the firm&rsquo;s written information security program (WISP), which the FTC Safeguards Rule and IRS Publication 4557 expect a tax practice to have]</span></p>
+        <span class="decide">[COUNSEL: align with the firm&rsquo;s written information security program (WISP; draft prepared 2026-10-31, not yet adopted), which the FTC Safeguards Rule and IRS Publication 4557 expect a tax practice to have]</span></p>
 
       <h2 id="retention">11. Retention and deletion</h2>
       <p>We keep information while we serve you and afterwards for at least the periods below, then dispose of it securely,
