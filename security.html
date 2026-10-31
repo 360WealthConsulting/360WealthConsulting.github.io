@@ -52,8 +52,9 @@
       <h2 id="signin">How sign-in works</h2>
       <ul>
         <li><strong>Staff</strong> sign in with firm-managed Microsoft accounts
-          <span class="decide">[DECISION: &ldquo;with multi-factor authentication&rdquo; &mdash; only after confirming OIDC_REQUIRE_MFA=true in production]</span>.
-          Staff sessions expire after 8 hours.</li>
+          <span class="decide">[DECISION: &ldquo;with multi-factor authentication&rdquo; &mdash; only after OIDC_REQUIRE_MFA=true in production; it is false today]</span>.
+          Staff sessions end after 30 minutes of inactivity and after 8 hours at most
+          <span class="decide">[DECISION: only once Client360 PR #642 is deployed]</span>.</li>
         <li><strong>Clients</strong> are invited individually. You sign in with a one-time code sent to your e-mail address, which
           expires after 10 minutes, or with a passkey registered in person at our office. We store sign-in codes only in a hashed
           form, limit how many can be requested, and do not reveal whether an e-mail address has an account.</li>
