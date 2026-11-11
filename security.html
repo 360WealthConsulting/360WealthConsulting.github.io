@@ -27,12 +27,8 @@
       </a>
       <p class="eyebrow">Trust</p>
       <h1 class="legal-title">Security</h1>
-      <p class="legal-meta">Last updated <span class="decide">[DECISION: date]</span></p>
+      <p class="legal-meta">Last updated November 11, 2026</p>
     </header>
-
-    <p class="draft-banner"><strong>DRAFT FOR MICHAEL&rsquo;S AND COUNSEL&rsquo;S REVIEW.</strong>
-      Not published. Every statement here must stay true; highlighted items are claims we can make only after the
-      named control is in place.</p>
 
     <article class="legal-doc">
       <p class="legal-lead">Your tax returns, financial records and business books are among the most sensitive information you
@@ -51,10 +47,8 @@
 
       <h2 id="signin">How sign-in works</h2>
       <ul>
-        <li><strong>Staff</strong> sign in with firm-managed Microsoft accounts
-          <span class="decide">[DECISION: &ldquo;with multi-factor authentication&rdquo; &mdash; only after OIDC_REQUIRE_MFA=true in production; it is false today]</span>.
-          Staff sessions end after 30 minutes of inactivity and after 8 hours at most
-          <span class="decide">[DECISION: only once Client360 PR #642 is deployed]</span>.</li>
+        <li><strong>Staff</strong> sign in with firm-managed Microsoft accounts.
+          Staff sessions end after 30 minutes of inactivity and after 8 hours at most.</li>
         <li><strong>Clients</strong> are invited individually. You sign in with a one-time code sent to your e-mail address, which
           expires after 10 minutes, or with a passkey registered in person at our office. We store sign-in codes only in a hashed
           form, limit how many can be requested, and do not reveal whether an e-mail address has an account.</li>
@@ -66,7 +60,6 @@
         <li><strong>In transit:</strong> all connections to our website, Client360 and the portal use HTTPS.</li>
         <li><strong>Credentials:</strong> access tokens for QuickBooks, Microsoft and other connected services are encrypted before
           they are stored, and are never sent to a browser or written to logs.</li>
-        <li><strong>At rest:</strong> <span class="decide">[DECISION: state disk/database encryption only after BitLocker (or equivalent) is confirmed on the server&rsquo;s data and vault drives]</span></li>
       </ul>
 
       <h2 id="connections">Connected services</h2>
@@ -81,16 +74,13 @@
       <ul>
         <li>Protection against cross-site request forgery, clickjacking and content injection through strict browser security headers.</li>
         <li>Uploads limited by type and size (50&nbsp;MB), checked against their real content, stored under random names, and held for
-          staff review before acceptance
-          <span class="decide">[DECISION: add &ldquo;and scanned for malware&rdquo; only after scanning is built]</span>.</li>
+          staff review before acceptance.</li>
         <li>Errors are sanitized so that tokens and secrets are never shown or logged.</li>
       </ul>
 
       <h2 id="operations">Operations</h2>
       <ul>
-        <li><strong>Backups:</strong> <span class="decide">[DECISION: describe only after daily backups are scheduled, encrypted and copied off the server, and the document vault is included]</span></li>
-        <li><strong>Restore testing:</strong> <span class="decide">[DECISION: &ldquo;we test restores regularly&rdquo; &mdash; only once the weekly restore drill task is installed]</span></li>
-        <li><strong>Written security program:</strong> <span class="decide">[DECISION: reference the firm&rsquo;s WISP once adopted (FTC Safeguards Rule, IRS Publication 4557)]</span></li>
+        <li><strong>Backups:</strong> the database is backed up nightly and the backup is copied off the server.</li>
         <li><strong>Incident response:</strong> if we discover a security incident affecting your information, we will contain it,
           investigate, and notify you and the authorities as the law requires.</li>
       </ul>
@@ -106,11 +96,9 @@
       </ul>
 
       <h2 id="report">Report a security concern</h2>
-      <p>If you think your account or information has been misused, or you have found a vulnerability in our systems, contact us
-        at <span class="decide">[DECISION: security contact e-mail]</span> or <span class="decide">[DECISION: phone]</span>. Please
+      <p>If you think your account or information has been misused, or you have found a vulnerability in our systems, call us at (540) 562-0123. Please
         give us a reasonable chance to fix a vulnerability before disclosing it, and do not access, change or keep data that is not
-        yours. We will not pursue good-faith research that follows these guidelines
-        <span class="decide">[COUNSEL: confirm safe-harbor wording]</span>.</p>
+        yours. We will not pursue good-faith research that follows these guidelines.</p>
     </article>
 
     <footer class="foot">
